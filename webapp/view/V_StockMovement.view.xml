@@ -1,0 +1,71 @@
+<mvc:View controllerName="ZWM_BIN_TO_BIN_010.controller.CC_StockMovement" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form">
+	<App>
+		<Page title="{i18n>XTIT_TITLE}" class="page">
+			<customHeader>
+				<Bar class="Bar">
+					<contentLeft>
+						<Image id="img1" alt="alttextimage" src="img/logo.jpg" width="15%" height="83%"/>
+						<Image id="img2" alt="alttextimage" src="img/vrline21.jpg" width="3%" height="70%"/>
+						<Text text="{i18n>XTIT_TITLE}" class="titleText"></Text>
+					</contentLeft>
+				</Bar>
+			</customHeader>
+			<Panel>
+				<f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanL="4" labelSpanM="2" columnsL="1" columnsM="3" emptySpanL="7"
+					emptySpanM="7">
+					<f:content>
+						<Label text="{i18n>XFLD_BRNUM}" class="label"></Label>
+						<Input type="Text" id="INP_BarcodeNumber" change="getBinDetails" class="input"/>
+					</f:content>
+				</f:SimpleForm>
+			</Panel>
+			<f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanL="4" labelSpanM="2" columnsL="1" columnsM="3" emptySpanL="7"
+				emptySpanM="7">
+				<f:content>
+					<Label text="{i18n>XFLD_S_LOC}" class="label"></Label>
+					<TEXT text="{oModel>/StorageLocation}" id="TXTV_StrLoc"/>
+					<Label text="{i18n>XFLD_S_BIN}" class="label"></Label>
+					<TEXT text="{oModel>/SourceBin}" id="TXTV_SourceBin"/>
+					<Label text="{i18n>XFLD_MATNR}" class="label"></Label>
+					<Text text="{oModel>/MaterialNumber}" id="TXTV_Matnr"></Text>
+					<Label text="{i18n>XFLD_BTCH}" class="label"></Label>
+					<Text text="{oModel>/BatchNumber}" id="TXTV_Batch"></Text>
+					<Label text="{i18n>XFLD_MES_N}" class="label"></Label>
+					<Text text="{oModel>/MESNumber}" id="TXTV_MESNumber"></Text>
+					<Label text="{i18n>XFLD_QUAN}" class="label"></Label>
+					<Input type="Text"  change="onQuanChange"  id="INP_Quantity"></Input>
+					<Text text="{oModel>/UOM}"  id="TXTV_UOM"></Text>
+					<Label text="{i18n>XFLD_STC_CAT}" class="label"></Label>
+					<Input type="Text" id="INP_StockCat" width="66%"></Input>
+					<Label text="{i18n>XFLD_SPL_STCK}" class="label"></Label>
+					<Input type="Text" id="INP_StockIndicator" width="70%">
+						<layoutData>
+							<l:GridData span="L1 M1 S1"></l:GridData>
+						</layoutData>
+					</Input>
+					<Input type="Text" id="INP_StockNumber" width="47%">
+						<layoutData>
+							<l:GridData span="L2 M2 S2"></l:GridData>
+						</layoutData>
+					</Input>
+					<Label text="{i18n>XFLD_DSTN_BIN}" class="label" labelFor="INP_DestinationBin" visible="false" id="LBL_DestinationBin"></Label>
+					<Input id="INP_DestinationBin" type="Text" visible="false" required="true"></Input>
+					<!--	<Text text="{oModel>/Result}" id="DestRes" visible = "false"></Text> -->
+					<Image id="IMG_Right" alt="alttextimage" src="img/IMG_Right.jpg" visible="false" width="20%" height="75%" class="sapUiTinyMargin"/>
+					
+					
+				</f:content>
+			</f:SimpleForm>
+			<footer >
+				<ToolBar class="footer">
+					<ToolbarSpacer/>
+					<Button id="BTN_Clear" icon="sap-icon://undo" text="{i18n>XBUT_CLR}" press="clearDetails" class="sapUiLargeMarginBegin"/>
+					<Button id="BTN_Create" icon="sap-icon://accept" text="{i18n>XBUT_CREATE}" type="Accept" press="validateBin" class="sapUiLargeMarginBegin"/>
+					<Button id="BTN_Mover" icon="sap-icon://accept" text="{i18n>XBUT_MOVE}" type="Accept" press="stockMovement" class="sapUiLargeMarginBegin"
+						visible="false"/>
+				</ToolBar>
+			</footer>
+		</Page>
+	</App>
+</mvc:View>

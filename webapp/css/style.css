@@ -1,0 +1,46 @@
+.titleText {
+    font-weight: bold;
+    font-family: "72";
+    color: BLACK;
+    src: local("72"), url(https://ui5.sap.com/sdk/resources/sap/ui/core/themes/sap_fiori_3/fonts/72-Regular.woff2?ui5-webcomponents) format("woff2"), url(https://ui5.sap.com/sdk/resources/sap/ui/core/themes/sap_fiori_3/fonts/72-Regular.woff?ui5-webcomponents) format("woff");
+}
+
+.page {
+    background-color: white;
+}
+
+.label {
+    font-weight: bold;
+    font-style: normal;
+    font-family: "72";
+    src: local("72"), url(https://ui5.sap.com/sdk/resources/sap/ui/core/themes/sap_fiori_3/fonts/72-Regular.woff2?ui5-webcomponents) format("woff2"), url(https://ui5.sap.com/sdk/resources/sap/ui/core/themes/sap_fiori_3/fonts/72-Regular.woff?ui5-webcomponents) format("woff");
+}
+
+.sapMMessageToastSuccess {
+    color: #4F8A10 !important;
+    background-color: #DFF2BF !important;
+    border: 1px solid #4F8A10 !important;
+    border-left: 7px solid #4F8A10 !important;
+}
+
+.sapMMessageToastDanger {
+    color: #D8000C !important;
+    background-color: #FFD2D2 !important;
+    border: 1px solid #D8000C !important;
+    border-left: 7px solid #D8000C !important;
+    max-width: 50rem !important;
+}
+
+.sapMMessageToastNote {
+    color: #FCF9F9 !important;
+    background-color: #5D5C5C !important;
+    border: 1px solid #4E4D4D !important;
+    border-left: 7px solid #4E4D4D !important;
+}
+
+.sapMMessageToastWarning {
+    color: #9F6000 !important;
+    background-color: #FEEFB3 !important;
+    border: 1px solid #9F6000 !important;
+    border-left: 7px solid #9F6000 !important;
+}
